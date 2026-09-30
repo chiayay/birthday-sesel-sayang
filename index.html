@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For You ♡</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Georgia", serif;
+
+            /* HIJAU MINT SOFT */
+            background: #EAF4EC;
+
+            /* HIJAU TUA YANG TETAP SOFT */
+            color: #355443;
+
+            overflow-x: hidden;
+        }
+
+
+        .opening {
+
+            height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            /* MINT GRADIENT */
+            background: linear-gradient(
+                135deg,
+                #EAF4EC,
+                #CFE6D4
+            );
+        }
+
+
+        .opening-content h1 {
+
+            font-size: 50px;
+
+            font-weight: normal;
+
+            margin-bottom: 15px;
+
+            color: #355443;
+        }
+
+
+        .opening-content p {
+
+            font-size: 18px;
+
+            margin-bottom: 30px;
+
+            color: #5F806A;
+        }
+
+
+        button {
+
+            border: none;
+
+            /* SAGE GREEN */
+            background: #6F9F7A;
+
+            color: white;
+
+            padding: 14px 30px;
+
+            border-radius: 30px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+
+            box-shadow: 0 6px 15px rgba(80, 120, 90, 0.20);
+        }
+
+
+        button:hover {
+
+            transform: scale(1.08);
+
+            background: #5D8969;
+        }
+
+        .main {
+
+            display: none;
+
+            padding: 70px 10%;
+
+            text-align: center;
+        }
+
+
+        section {
+
+            margin-bottom: 100px;
+        }
+
+
+        h2 {
+
+            font-size: 36px;
+
+            margin-bottom: 20px;
+
+            font-weight: normal;
+
+            
+            color: #5F8D6E;
+        }
+
+
+        .subtitle {
+
+            font-size: 18px;
+
+            color: #62816C;
+        }
+
+
+        
+
+        .birthday h1 {
+
+            font-size: 55px;
+
+            /* HIJAU */
+            color: #5F8D6E;
+
+            margin-bottom: 20px;
+        }
+
+
+        .birthday p {
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #355443;
+        }
+
+
+        
+
+        .memories {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+
+            margin-top: 40px;
+        }
+
+
+        .photo {
+
+            
+            background: #FFFDF8;
+
+            padding: 12px;
+
+            width: 220px;
+
+            box-shadow: 0 10px 25px rgba(70, 100, 80, 0.15);
+
+            transform: rotate(-2deg);
+
+            transition: 0.3s;
+
+            color: #355443;
+        }
+
+
+        .photo:nth-child(2) {
+
+            transform: rotate(3deg);
+        }
+
+
+        .photo:nth-child(3) {
+
+            transform: rotate(-1deg);
+        }
+
+
+        .photo:hover {
+
+            transform: rotate(0deg) scale(1.08);
+        }
+
+
+        .photo img {
+
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+        }
+
+
+        .photo p {
+
+            padding: 15px 5px 5px;
+
+            font-size: 15px;
+
+            color: #355443;
+        }
+
+
+        
+
+        .love-list {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            margin-top: 35px;
+        }
+
+
+        .love-card {
+
+            width: 200px;
+
+            padding: 35px 20px;
+
+            /* CREAM */
+            background: #FFFDF8;
+
+            /* HIJAU */
+            color: #355443;
+
+            border-radius: 25px;
+
+            /* BORDER MINT */
+            border: 2px solid #CFE6D4;
+
+            box-shadow: 0 8px 20px rgba(70, 100, 80, 0.10);
+
+            transition: 0.3s;
+        }
+
+
+        .love-card:hover {
+
+            transform: translateY(-8px) rotate(1deg);
+
+            background: #F7FCF8;
+
+            box-shadow: 0 15px 30px rgba(70, 100, 80, 0.15);
+        }
+
+
+        .love-card span {
+
+            font-size: 38px;
+
+            /* SAGE GREEN */
+            color: #6F9F7A;
+        }
+
+
+        .love-card p {
+
+            margin-top: 15px;
+
+            line-height: 1.5;
+
+            /* HIJAU GELAP SOFT */
+            color: #355443;
+
+            font-weight: bold;
+        }
+
+
+        
+
+        .letter {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            
+            background: #FFFDF8;
+
+            
+            color: #355443;
+
+            padding: 50px;
+
+            border-radius: 25px;
+
+            
+            border: 2px solid #CFE6D4;
+
+            box-shadow: 0 10px 30px rgba(70, 100, 80, 0.12);
+
+            text-align: left;
+
+            line-height: 1.9;
+
+            font-size: 18px;
+        }
+
+
+        
+
+        .final {
+
+            padding-bottom: 100px;
+        }
+
+
+        .final h2 {
+
+            color: #5F8D6E;
+        }
+
+
+        #secret {
+
+            display: none;
+
+            margin-top: 30px;
+
+            font-size: 28px;
+
+            /* HIJAU */
+            color: #5F8D6E;
+
+            animation: fadeIn 1s ease;
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(20px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+        }
+
+
+        /* HEART */
+
+        .heart {
+
+            position: fixed;
+
+            top: -20px;
+
+            animation: fall linear forwards;
+
+            pointer-events: none;
+
+            /* HIJAU MINT */
+            color: #78A889;
+        }
+
+
+        @keyframes fall {
+
+            to {
+
+                transform: translateY(110vh) rotate(360deg);
+
+                opacity: 0;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .opening-content h1 {
+
+                font-size: 38px;
+            }
+
+
+            .birthday h1 {
+
+                font-size: 40px;
+            }
+
+
+            h2 {
+
+                font-size: 30px;
+            }
+
+
+            .main {
+
+                padding: 50px 6%;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- OPENING -->
+
+    <div class="opening" id="opening">
+
+        <div class="opening-content">
+
+            <h1>hi gendut ♡</h1>
+
+            <p>
+                i love you
+            </p>
+
+            <button onclick="openWebsite()">
+
+                Open it 💌
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- MAIN WEBSITE -->
+
+    <div class="main" id="main">
+
+
+        <!-- BIRTHDAY -->
+
+        <section class="birthday">
+
+            <h1>
+                Happy Birthday Sesel gendut🎂
+            </h1>
+
+            <p>
+
+                selamat 21++
+
+                <br><br>
+
+                eh hbd ya my kekasih gendut mirip ikan buntal,my partner traveling...
+                may u always be happy and healthy yaa.
+                iknow sih aku keren bikin ginian yah...
+
+            </p>
+
+        </section>
+
+
+
+        <!-- MEMORIES -->
+
+        <section>
+
+            <h2>
+                ♡ 3 foto with my kekasih ♡
+            </h2>
+
+            <div class="memories">
+
+
+                <div class="photo">
+
+                    <img src="foto1.jpeg">
+
+                    <p>
+                        kisah cinta kasih BPI >< BHAP
+                    </p>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img src="foto2.jpeg">
+
+                    <p>
+                        our first trip together YAY!!!
+                    </p>
+
+                </div>
+
+
+                <div class="photo">
+
+                    <img src="foto3.jpeg">
+
+                    <p>
+                        ngebolang ke ciwidey!!!
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- THINGS I LOVE -->
+
+        <section>
+
+            <h2>
+                Things i love about you
+            </h2>
+
+            <div class="love-list">
+
+
+                <div class="love-card">
+
+                    <span>
+                        ♡
+                    </span>
+
+                    <p>
+                        Ganteng
+                    </p>
+
+                </div>
+
+
+                <div class="love-card">
+
+                    <span>
+                        ☻
+                    </span>
+
+                    <p>
+                        mancung
+                    </p>
+
+                </div>
+
+
+                <div class="love-card">
+
+                    <span>
+                        ♡
+                    </span>
+
+                    <p>
+                        my type
+                    </p>
+
+                </div>
+
+
+                <div class="love-card">
+
+                    <span>
+                        ✦
+                    </span>
+
+                    <p>
+                        my type lagiii
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LETTER -->
+
+        <section>
+
+            <h2>
+                Dibaca ya💌
+            </h2>
+
+            <div class="letter">
+
+                Dear sesel,
+
+                <br><br>
+
+                Happy birthday sesel sayang, cintaku,buntalku
+
+                semoga selalu diberi kesehatan dan kebahagiaan,
+
+                umur panjang kesuksesan, dan selalu di kelilingi orang baik dan
+
+                keberkahan.
+
+                <br><br>
+
+                Semoga di umur yang 21++ ini kamu makin dewasa, kurangin ego nya,
+
+                marah-marah nya,dan bad habbits nya, kurang kurangin MOMOTORAN MALEM,
+
+                JJ JAMET LU ITUUUU. aamiin
+
+                semoga umur yang baru ini adalah awal dari karir kamu yang bagus ya ndut..
+
+                <br><br>
+
+                Thank you sudah bertahan dari keras nya kehidupan(anjay)
+
+                .Thank you sudah sabar sama aku dan segala nya
+
+                .Thank you sudah menjadi orang yang baik
+
+                .Thank you sudah selalu mengusahakan yang terbaik untuk dirimu...
+
+                I'm so proud of you, sesel sayanggg<3
+
+                <br><br>
+
+                Happy birthday, sesel. ♡
+
+                <br><br>
+
+                — chiayay
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FINAL -->
+
+        <section class="final">
+
+            <h2>
+                eh satu lagi dech 🎁
+            </h2>
+
+            <p class="subtitle">
+
+                jangan salting yh ><
+
+            </p>
+
+            <br>
+
+            <button onclick="showSecret()">
+
+                Open it ♡
+
+            </button>
+
+
+            <div id="secret">
+
+                I love you. ❤️
+
+                <br>
+
+                Happy birthday, kesayangan cesiiii ><
+
+                <br>
+
+                <p class="subtitle">
+
+                    kado nya besok yay
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+
+    <script>
+
+
+        function openWebsite() {
+
+            document.getElementById("opening").style.display = "none";
+
+            document.getElementById("main").style.display = "block";
+
+            createHearts();
+
+        }
+
+
+
+        function showSecret() {
+
+            document.getElementById("secret").style.display = "block";
+
+            createHearts();
+
+        }
+
+
+
+        function createHearts() {
+
+            for (let i = 0; i < 25; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.classList.add("heart");
+
+                heart.innerHTML = "♡";
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.fontSize =
+                    (Math.random() * 20 + 15) + "px";
+
+                heart.style.animationDuration =
+                    (Math.random() * 3 + 3) + "s";
+
+                document.body.appendChild(heart);
+
+                setTimeout(() => {
+
+                    heart.remove();
+
+                }, 6000);
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
